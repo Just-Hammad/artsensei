@@ -49,29 +49,21 @@ function startObservingChat() {
     }, 100); // Delay of 100 milliseconds
 }
 
-const elevenLabsApiKey = process.env.ELEVENLABS_API_KEY;
-const elevenLabsApiUrl = 'https://api.elevenlabs.io/v1/text-to-speech';
-const voiceId = '5vybZGXH9butYIbZLvLY';
-
 async function sendTextToServer(text) {
     if (SoundOn) {
         try {
-            console.log('voice_id: 5vybZGXH9butYIbZLvLY updated');
-
-            const response = await fetch(`${elevenLabsApiUrl}/${voiceId}`, {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                  'xi-api-key': elevenLabsApiKey,
-                },
-                body: JSON.stringify({
-                  text,
-                  voice_settings: {
-                    stability: 0.5,
-                    similarity_boost: 0.75
-                  }
-                }),
-              });
+            console.log('voice_id: 5vybZGXH9butYIbZLvLY');
+        const response = await fetch('https://voice.artsensei.ai/generate-audio', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+            text: text, 
+            voice_id: '5vybZGXH9butYIbZLvLY', // Change the model ID here
+            voice: 'Piper'  // Adjust the voice name as needed
+            })
+        });
     
         if (!response.ok) {
             console.error('Error generating audio from server:', response.json);
