@@ -12,7 +12,7 @@ const elevenlabs = new ElevenLabsClient({
 
 app.post('/generate-audio', async (req, res) => {
   try {
-    const { text, voice = 'Rachel', voice_id = '21m00Tcm4TlvDq8ikWAM' } = req.body;
+    const { text, voice = 'Rachel', voice_id = '5vybZGXH9butYIbZLvLY' } = req.body;
 
     if (!text) {
       return res.status(400).json({ error: 'Text is required!' });

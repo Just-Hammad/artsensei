@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,8 +11,8 @@
 
     <!-- ----------------------------------------Edit inside this-------------------------------------------- -->
 
-    <img src="Alex.jpg" alt="Art Image">
-    <h2>Sensei Alex</h2>
+    <img id="artImage" alt="Art Image">
+    <h2 id="senseiName"></h2>
     <p class="subtext">Lesson: The Anatomy of Trees</p>
     <div style="display: none;" id="logContainer"></div>
     <div style="max-width: 1200px;">
@@ -28,17 +29,32 @@
 
     <!-- Chatbot initialization -------------------------------- DO NOT EDIT ------------------------------- -->
     <script type="module">
-       import Chatbot from "./js/web.js"
+
+        // Change the name of the sensei
+        //////////////////////////////////////////
+
+
+        const name = "Alex";
+
+
+        //////////////////////////////////////////
+        
+        // Update image and text dynamically
+        document.getElementById("artImage").src = `${name}.jpg`;
+        document.getElementById("senseiName").textContent = `Sensei ${name}`;
+
+        // Initialize the chatbot
+        import Chatbot from "./js/web.js";
         Chatbot.init({
             chatflowid: "fe66d963-44fc-4647-a8ec-7d29fbdd1fdf",
             apiHost: "https://chat.artsensei.ai",
             theme: {
                 chatWindow: {
                     showTitle: true,
-                    title: 'Sensei Alex',
-                    titleAvatarSrc: 'Alex.jpg',
+                    title: `Sensei ${name}`,
+                    titleAvatarSrc: `${name}.jpg`,
                     showAgentMessages: false,
-                    welcomeMessage: 'Hi there! Are you ready to work on drawings of trees?',
+                    welcomeMessage: `Hi there! Are you ready to work on drawings of trees?`,
                     errorMessage: 'Error: Please contact teacher',
                     backgroundColor: "#212121",
                     height: 700,
@@ -49,7 +65,7 @@
                         backgroundColor: "#212121",
                         textColor: "#b3b3b3",
                         showAvatar: true,
-                        avatarSrc: "Alex.jpg",
+                        avatarSrc: `${name}.jpg`,
                         maxWidth: '100%', /* Set the bot message to take full width of the chat window */
                         marginRight: '60px', /* Keep some space from the right side of the screen */
                     },
