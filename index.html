@@ -3,14 +3,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArtSensei</title>
-    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/arpanghosh8453/flowise-nobrand/refs/heads/main/Cathy.ico">
+    <link rel="icon" type="image/x-icon" href="Cathy.ico">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 
     <!-- ----------------------------------------Edit inside this-------------------------------------------- -->
 
-    <img src="https://raw.githubusercontent.com/arpanghosh8453/flowise-nobrand/main/character.png" alt="Art Image">
+    <img src="character.png" alt="Art Image">
     <h2>Sensei Sarah</h2>
     <p class="subtext">Lesson: The Anatomy of Trees</p>
     <div style="display: none;" id="logContainer"></div>
@@ -28,7 +28,7 @@
 
     <!-- Chatbot initialization -------------------------------- DO NOT EDIT ------------------------------- -->
     <script type="module">
-       import Chatbot from "./js/web.js"
+       import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
         Chatbot.init({
             chatflowid: "fe66d963-44fc-4647-a8ec-7d29fbdd1fdf",
             apiHost: "https://chat.artsensei.ai",
@@ -36,7 +36,7 @@
                 chatWindow: {
                     showTitle: true,
                     title: 'Sensei Sarah',
-                    titleAvatarSrc: 'https://raw.githubusercontent.com/arpanghosh8453/flowise-nobrand/main/character.png',
+                    titleAvatarSrc: 'character.png',
                     showAgentMessages: false,
                     welcomeMessage: 'Hi there! Are you ready to work on drawings of trees?',
                     errorMessage: 'Error: Please contact teacher',
@@ -49,7 +49,7 @@
                         backgroundColor: "#212121",
                         textColor: "#b3b3b3",
                         showAvatar: true,
-                        avatarSrc: "https://raw.githubusercontent.com/arpanghosh8453/flowise-nobrand/main/character.png",
+                        avatarSrc: "character.png",
                         maxWidth: '100%', /* Set the bot message to take full width of the chat window */
                         marginRight: '60px', /* Keep some space from the right side of the screen */
                     },
