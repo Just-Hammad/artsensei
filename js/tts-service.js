@@ -59,7 +59,7 @@ async function sendTextToServer(text) {
             },
             body: JSON.stringify({
             text: text, 
-            voice_id: 'DtsPFCrhbCbbJkwZsb3d', // Change the model ID here
+            voice_id: '5vybZGXH9butYIbZLvLY', // Change the model ID here
             voice: 'Piper'  // Adjust the voice name as needed
             })
         });
