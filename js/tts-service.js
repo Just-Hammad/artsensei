@@ -52,6 +52,7 @@ function startObservingChat() {
 async function sendTextToServer(text) {
     if (SoundOn) {
         try {
+            console.log('voice_id: 5vybZGXH9butYIbZLvLY');
         const response = await fetch('https://voice.artsensei.ai/generate-audio', {
             method: 'POST',
             headers: {
