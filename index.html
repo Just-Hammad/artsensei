@@ -41,7 +41,7 @@
         
         // Update image and text dynamically
         document.getElementById("artImage").src = `${name}.jpg`;
-        document.getElementById("senseiName").textContent = `Sensei ${name}`;
+        document.getElementById("senseiName").textContent = `${name}`;
 
         // Initialize the chatbot
         import Chatbot from "./js/web.js";
@@ -51,7 +51,7 @@
             theme: {
                 chatWindow: {
                     showTitle: true,
-                    title: `Sensei ${name}`,
+                    title: `${name}`,
                     titleAvatarSrc: `${name}.jpg`,
                     showAgentMessages: false,
                     welcomeMessage: `Hi there! Are you ready to work on drawings of trees?`,
