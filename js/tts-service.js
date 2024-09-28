@@ -50,12 +50,12 @@ function startObservingChat() {
 }
 
 async function sendTextToServer(text) {
-    const elevenLabsApiKey = process.env.ELEVEN_LABS_API_KEY;
+    const elevenLabsApiKey = process.env.elevenLabsApiKey;
     const elevenLabsApiUrl = 'https://api.elevenlabs.io/v1/text-to-speech';
     const voiceId = 'F0yTXVI2WXEIiShs00dR';
     if (SoundOn) {
         try {
-            const response = await fetch(`${elevenLabsApiUrl}/${voiceId}`, {
+            const response = await fetch(`${elevenLabsApiUrl}/${voiceId}/stream?optimize_streaming_latency=2`, {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -63,18 +63,17 @@ async function sendTextToServer(text) {
                 },
                 body: JSON.stringify({
                   text,
+                  model_id: 'eleven_turbo_v2_5',
                   voice_settings: {
                     stability: 0.5,
                     similarity_boost: 0.75
                   }
                 }),
               });
-    
         if (!response.ok) {
             console.error('Error generating audio from server:', response.json);
             return;
         }
-        const audioStream = response.body;
         const audioUrl = URL.createObjectURL(await response.blob());
         currentAudio.src = audioUrl
         currentAudio.play();
