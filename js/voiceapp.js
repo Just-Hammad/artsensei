@@ -7,7 +7,7 @@ const port = 9090;
 app.use(express.json());
 
 const elevenlabs = new ElevenLabsClient({
-  apiKey: "sk_6e0a721e712a64d32b211f74bb7d09bbc380874de5a85b16" // Make sure to replace this with your actual API key
+  apiKey: "" // Make sure to replace this with your actual API key
 });
 
 app.post('/generate-audio', async (req, res) => {

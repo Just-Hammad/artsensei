@@ -50,12 +50,12 @@ function startObservingChat() {
 }
 
 async function sendTextToServer(text) {
-    const elevenLabsApiKey = process.env.elevenLabsApiKey;
+    const elevenLabsApiKey = '';
     const elevenLabsApiUrl = 'https://api.elevenlabs.io/v1/text-to-speech';
-    const voiceId = 'F0yTXVI2WXEIiShs00dR';
+    const voiceId = document.getElementById('voiceId').value;
     if (SoundOn) {
         try {
-            const response = await fetch(`${elevenLabsApiUrl}/${voiceId}/stream?optimize_streaming_latency=2`, {
+            const response = await fetch(`${elevenLabsApiUrl}/${voiceId}`, {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
